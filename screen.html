@@ -5,29 +5,70 @@
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Document</title>
 </head>
+<script>
+     //TMDB 영화 top rated DB
+     const options = {
+    method: 'GET',
+    headers: {
+    accept: 'application/json',
+    Authorization: 'BearereyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmODVkZGNjYjFlZDNkMDNmMTU4ZDBmZjc3ODIyY2EyNiIsInN1YiI6IjY2MmEzMmEwZGUxMWU1MDA5YTcwZWNjMSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.XoxZolc3Fs1BAP5MZ-WOzyqWVITOnGs81PU9__J0mYU'
+    }
+    }
+    fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', options)
+    .then(response => response.json())
+    .then(response => console.log(response))
+    .catch(err => console.error(err));
+
+    let searchWord = document.getElementById("searchWrite")
+
+    let searchResult(){
+        let searchSent = searchWord.value;
+        
+    }
+</script>
 <style>
-    .titleMenu{
+    .titleMenu {
         text-align: center;
     }
+    .titledes {
+        background-color: aqua;
+        text-align: center;
+    }
+    .navbtn {
+
+    }
+    .search {
+
+    }
+    .cardDes{
+
+    }
+    .footermsg{
+        font-size: 10;
+    }
 </style>
+
 <body>
     <nav>
         <ul id=titleMenu>
-            <li>
-                네비게이션 바 입니다.ddddd
-            </li>
-            <li>
-                두번째 메뉴 입니다.asasa
-            </li>
+                <div class="search">
+                    <input id="searchWrite" placeholder="검색어를 입력하세요" />
+                    <button class="navbtn">검색</button>
+                 </div>
         </ul>
     </nav>
     <main>
-        <h1>
+        <h1 class="titledes">
             BLUE SCREEN
         </h1>
+        <div class="cardDes" id="card">
+            
+        </div>
     </main>
-    <footer>
-            최하단입니다.
+    <footer class="footermsg">
+        <p>제작 : 김호연</p>
+        <p>이메일 :</p>
     </footer>
 </body>
+
 </html>
